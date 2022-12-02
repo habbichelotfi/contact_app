@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Message } from '../services/data.service';
+import {Contact} from '../data/contact';
 
 @Component({
   selector: 'app-message',
@@ -7,7 +7,7 @@ import { Message } from '../services/data.service';
   styleUrls: ['./message.component.scss'],
 })
 export class MessageComponent {
-  @Input() message?: Message;
+  @Input() contact?: Contact;
 
   isIos() {
     const win = window as any;
