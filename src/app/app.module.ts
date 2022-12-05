@@ -11,12 +11,12 @@ import {DetailsContactComponent} from './details-contact/details-contact.compone
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SQLite } from '@awesome-cordova-plugins/sqlite';
+import { AddContactComponent } from './add-contact/add-contact.component';
 @NgModule({
-  declarations: [AppComponent,DetailsContactComponent],
+  
+  declarations: [AppComponent,DetailsContactComponent,AddContactComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,CommonModule,FormsModule],
   providers: [
-    SQLite,
-    
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
