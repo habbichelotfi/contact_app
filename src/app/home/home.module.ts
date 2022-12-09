@@ -5,8 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
-import { MessageComponentModule } from '../message/message.module';
-import {ContactItemComponent} from '../contact-item/contact-item.component';
+import {ContactItemComponent} from '../components/contact-item/contact-item.component';
 import { SQLite } from '@awesome-cordova-plugins/sqlite';
 
 @NgModule({
@@ -14,7 +13,6 @@ import { SQLite } from '@awesome-cordova-plugins/sqlite';
     CommonModule,
     FormsModule,
     IonicModule,
-    MessageComponentModule,
     HomePageRoutingModule,
   ],
   declarations: [HomePage,ContactItemComponent

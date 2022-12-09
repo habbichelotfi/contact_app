@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 
 import {Contact} from '../data/contact';
+import { StorageHelper } from '../storage/storage_helper';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +10,8 @@ import {Contact} from '../data/contact';
 export class DataService {
 
   // public contacts: Contact[] = [];
-
-  public contacts:Contact[]=[
+  private storage: Storage | undefined=undefined;
+  public _contacts:Contact[]=[
     {
       id:1,
       name: 'Matt Chorsey',
@@ -42,16 +43,17 @@ export class DataService {
 
   ];
 
-  constructor() { 
-
-    
+  constructor() {
+  }
+  public get contacts():ReadonlyArray<Contact>{
+   return this._contacts;
   }
 
   public getContacts(): ReadonlyArray<Contact> {
-    return this.contacts;
+    return this._contacts;
   }
   public getContactFromName(contactName:string):Contact|undefined{
-    return this.contacts.find(contact=>contact.name===contactName) as Contact;
+    return this._contacts.find(contact=>contact.name===contactName) as Contact;
   }
 
   // public getMessageById(id: number): Message {

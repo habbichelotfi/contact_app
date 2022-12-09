@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Contact} from '../data/contact';
-import {DataService} from '../services/data.service';
+import {Contact} from '../../data/contact';
+import {DataService} from '../../services/data.service';
 import {ActivatedRoute,ParamMap,Router} from '@angular/router';
 import { Platform } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
@@ -27,11 +27,29 @@ export class DetailsContactComponent implements OnInit {
 
     var imageUrl = image.photos[0].webPath;
     this.contact!.contact_picture=imageUrl!;
+    console.log(imageUrl);
  
   };
+  chunk(str: any, position: number){
+    let ret = [];
+    let i;
+    let len;
+
+    for(i = 0, len = str.length; i < len; i += position) {
+       ret.push(str.substr(i, position));
+    }
+
+    return ret;
+  }
   
 onInputChange(text: string){
-  if (text.length<14){
+   //first remove previous spaces
+   this.contact!.phone = this.contact!.phone.replace(/\s/g, '');
+
+   //then add space (or any char) after second (or any "n-th") position
+   this.contact!.phone = this.chunk(this.contact!.phone, 2).join(' ');
+  
+  if ( text.length<14){
    this.InputColor='red';
   }else{
    this.InputColor='black'

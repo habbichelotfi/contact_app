@@ -1,0 +1,41 @@
+<ion-content>
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start" onclick="goBack()">
+        <ion-back-button defaultHref="/">Back</ion-back-button>
+      </ion-buttons>
+      <ion-title>Add a new contact</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-card >
+  <ion-header>
+  <ion-title>
+  <!-- {{contact.name}} -->
+    </ion-title>
+    </ion-header>
+  
+  <ion-card-content>
+    <button  (click)="takePicture()" block>
+  
+      <!-- <img [src]="contact.contact_picture" width="120" height="120" ng-click="takePicture()"/> -->
+  
+    </button>
+  
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <!-- <ion-input required minlength="1" [clearInput]="true" placeholder="Enter Your contact name" [(ngModel)]="contact.name"></ion-input> -->
+      <ion-note slot="error">Empty field</ion-note>
+  
+    </ion-item>
+    <ion-item >
+      <ion-label position="floating">Number</ion-label>
+      <!-- <ion-input required [ngStyle]="{'color':InputColor}" [clearInput]="true" maxlength="14"  placeholder="Enter Your contact phone number"  type="tel" [(ngModel)]="contact.phone" (ngModelChange)="onInputChange(contact.phone)"></ion-input> -->
+      <ion-note slot="error">Invalid phone number</ion-note>
+    </ion-item>
+    </ion-card-content>
+  
+    </ion-card>
+  
+</ion-content>

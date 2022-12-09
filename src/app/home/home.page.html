@@ -34,6 +34,9 @@
         </ion-card-header>
         <ion-card-content>
     <ion-list>
+      <ion-text *ngIf="contacts.length===0">
+        <h1>No contact found.</h1>
+      </ion-text>
       <app-contact-item *ngFor="let contact of contacts" [contact]="contact">
 
         </app-contact-item>

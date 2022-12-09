@@ -1,5 +1,5 @@
 import { Component, OnInit ,Input} from '@angular/core';
-import {Contact} from '../data/contact';
+import {Contact} from '../../data/contact';
 import {Router} from '@angular/router';
 @Component({
   selector: 'app-contact-item',

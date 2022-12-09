@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import {DetailsContactComponent} from './details-contact/details-contact.component';
+import {DetailsContactComponent} from './components/details-contact/details-contact.component';
 const routes: Routes = [
   {
     path: 'home',
